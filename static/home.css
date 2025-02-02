@@ -1,0 +1,181 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: #fef9c3; /* لون أصفر فاتح */
+  color: #333;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Container for All Sections */
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* قسمين بجانب بعض */
+  grid-template-rows: auto auto; /* تحديد صفين لكل الأقسام */
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    grid-template-columns: 1fr 1fr; /* قسمين بجانب بعض */
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .container {
+    grid-template-columns: 1fr 1fr; /* قسمين بجانب بعض */
+  }
+}
+
+/* Individual Section Styles */
+.section {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+/* First and Second Sections (Smaller) */
+#headerSection,
+#emptySection {
+  grid-column: span 1; /* جعل هذه الأقسام أصغر */
+}
+
+header {
+  background: #ffd700; /* اللون الأصفر */
+  padding: 20px;
+  border-radius: 10px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 15px;
+  justify-content: center;
+}
+
+header div {
+  font-weight: bold;
+  padding: 10px;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.8);
+  transition: transform 0.3s ease-in-out;
+}
+
+header div:hover {
+  transform: scale(1.05);
+}
+
+#emptySection div {
+  padding: 20px;
+  text-align: center;
+  font-size: 18px;
+  color: #aaa;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
+}
+
+/* Third and Fourth Sections (Larger) */
+#auditSection,
+#chartsSection {
+  grid-column: span 2; /* جعل هذه الأقسام أكبر */
+}
+
+#auditContainer {
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  max-height: 330px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: orange transparent;
+}
+
+#auditContainer h2 {
+  color: #d4af37; /* ذهبي */
+}
+
+#auditList {
+  list-style: none;
+  padding: 0;
+}
+
+#auditList li {
+  background: #fef3c7;
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 5px;
+  transition: transform 0.3s ease-in-out;
+}
+
+#auditList li:hover {
+  transform: scale(1.05);
+  background: #ffeb99;
+}
+
+#chartSelection {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+button {
+  background: #ffcc00;
+  color: #333;
+  border: none;
+  padding: 10px 20px;
+  margin: 10px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background: #ffb700;
+  transform: scale(1.1);
+}
+
+canvas {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  max-width: 600px;
+  margin: 20px auto;
+  transition: opacity 0.5s ease-in-out;
+  display: block;
+}
+
+/* Style for the charts */
+canvas {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+header,
+#auditContainer,
+canvas {
+  animation: fadeIn 0.8s ease-in-out;
+}
