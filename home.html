@@ -1,60 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GraphQL Profile</title>
+    <link rel="stylesheet" href="static/home.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>GraphQL Profile</title>
-  <link rel="stylesheet" href="static/home.css" />
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-</head>
+  <body>
+    <div class="container">
+      <!-- First Section -->
+      <div class="section" id="headerSection">
+        <header>
+          <div id="userID">User ID: Loading...</div>
+          <div id="username">Username: Loading...</div>
+          <div id="audRatio">Audit Ratio: Loading...</div>
+          <div id="xPd">XP: Loading...</div>
+          <div id="proDone">Submitted Projects: Loading...</div>
+          <div><button id="logoutBtn" type="button">Logout</button></div>
+        </header>
+      </div>
 
-<body>
-  <div class="container">
-    <!-- First Section -->
-    <div class="section" id="headerSection">
-      <header>
-        <div id="userID">User ID: Loading...</div>
-        <div id="username">Username: Loading...</div>
-        <div id="audRatio">Audit Ratio: Loading...</div>
-        <div id="xPd">XP: Loading...</div>
-        <div id="proDone">Submitted Projects: Loading...</div>
-        <div><button id="logoutBtn" type="button">Logout</button></div>
-      </header>
-    </div>
-
-    <!-- Second Section (Empty) -->
-    <div class="section" id="emptySection">
-      <div></div>
-    </div>
-
-    <!-- Third Section: Audit History -->
-    <div class="section" id="auditSection">
-      <div id="auditContainer">
+      <!-- Second Section (Empty) -->
+      <div class="section" id="emptySection">
         <h2>Audit History</h2>
-        <ul id="auditList"></ul>
+
+        <div id="auditContainer">
+          <ul id="auditList"></ul>
+        </div>
+      </div>
+
+      <!-- Third Section: Audit History -->
+      <!-- <div class="section" id="auditSection"></div> -->
+
+      <!-- Fourth Section: Charts -->
+      <div class="section" id="chartsSection">
+        <main>
+          <div id="chartSelection">
+            <button id="attemptsBtn">Show Attempts Chart</button>
+            <button id="skillsBtn">Show Skills Chart</button>
+          </div>
+          <canvas id="attemptsChart" width="800" height="600"></canvas>
+          <canvas
+            id="skillsChart"
+            width="800"
+            height="600"
+            style="display: none"
+          ></canvas>
+        </main>
       </div>
     </div>
 
-    <!-- Fourth Section: Charts -->
-    <div class="section" id="chartsSection">
-      <main>
-        <div id="chartSelection">
-          <button id="attemptsBtn">Show Attempts Chart</button>
-          <button id="skillsBtn">Show Skills Chart</button>
-        </div>
-        <canvas id="attemptsChart" width="600" height="300"></canvas>
-        <canvas id="skillsChart" width="600" height="300" style="display: none"></canvas>
-      </main>
-    </div>
-  </div>
-
-  <script src="js/login.js"></script>
-  <script src="js/dom.js"></script>
-  <script src="js/attemptsChart.js"></script>
-  <script src="js/skillsChart.js"></script>
-  <script src="js/recAudits.js"></script>
-</body>
-
-
+    <script src="js/login.js"></script>
+    <script src="js/dom.js"></script>
+    <script src="js/attemptsChart.js"></script>
+    <script src="js/skillsChart.js"></script>
+    <script src="js/recAudits.js"></script>
+  </body>
 </html>

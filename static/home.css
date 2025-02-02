@@ -8,7 +8,7 @@
 }
 
 body {
-  background: #fef9c3; /* لون أصفر فاتح */
+  background: #fef9c3;
   color: #333;
   padding: 20px;
   text-align: center;
@@ -17,26 +17,13 @@ body {
 /* Container for All Sections */
 .container {
   display: grid;
-  grid-template-columns: 1fr 1fr; /* قسمين بجانب بعض */
-  grid-template-rows: auto auto; /* تحديد صفين لكل الأقسام */
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
   gap: 20px;
   max-width: 1200px;
   margin: 0 auto;
 }
 
-@media screen and (min-width: 768px) {
-  .container {
-    grid-template-columns: 1fr 1fr; /* قسمين بجانب بعض */
-  }
-}
-
-@media screen and (min-width: 1024px) {
-  .container {
-    grid-template-columns: 1fr 1fr; /* قسمين بجانب بعض */
-  }
-}
-
-/* Individual Section Styles */
 .section {
   background: white;
   padding: 20px;
@@ -45,14 +32,13 @@ body {
   margin-bottom: 20px;
 }
 
-/* First and Second Sections (Smaller) */
 #headerSection,
 #emptySection {
-  grid-column: span 1; /* جعل هذه الأقسام أصغر */
+  grid-column: span 1;
 }
 
 header {
-  background: #ffd700; /* اللون الأصفر */
+  background: #fef3c7;
   padding: 20px;
   border-radius: 10px;
   display: grid;
@@ -77,15 +63,13 @@ header div:hover {
   padding: 20px;
   text-align: center;
   font-size: 18px;
-  color: #aaa;
   background: rgba(255, 255, 255, 0.8);
   border-radius: 10px;
 }
 
-/* Third and Fourth Sections (Larger) */
 #auditSection,
 #chartsSection {
-  grid-column: span 2; /* جعل هذه الأقسام أكبر */
+  grid-column: span 2;
 }
 
 #auditContainer {
@@ -93,14 +77,14 @@ header div:hover {
   padding: 15px;
   border-radius: 10px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-  max-height: 330px;
+  max-height: 380px;
   overflow-y: auto;
   scrollbar-width: thin;
   scrollbar-color: orange transparent;
 }
 
 #auditContainer h2 {
-  color: #d4af37; /* ذهبي */
+  color: #d4af37;
 }
 
 #auditList {
@@ -149,20 +133,13 @@ canvas {
   border-radius: 10px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
   padding: 10px;
-  max-width: 600px;
+  max-width: 800px;
+  max-height: 600px;
   margin: 20px auto;
   transition: opacity 0.5s ease-in-out;
   display: block;
 }
 
-/* Style for the charts */
-canvas {
-  width: 100%;
-  max-width: 600px;
-  height: auto;
-}
-
-/* Animation */
 @keyframes fadeIn {
   from {
     opacity: 0;
