@@ -63,6 +63,11 @@ async function fetchUserData(jwt) {
                 id
                 login
                 auditRatio
+                 transactions(where: {type:{ _eq: "xp"}}){
+                          amount
+                          path
+                          createdAt
+                        }
                  xps {
                 path
                 amount
@@ -91,7 +96,9 @@ async function fetchUserData(jwt) {
       const xpView = userdata.data.user[0].xps;
       const proDone = userdata.data.progress_aggregate.aggregate.count;
       const audits = userdata.data.user[0].audits;
-
+      const xpProgress = userdata.data.user[0].transactions;
+      renderXpChart(xpProgress);
+      
       const modu = /module(?!\/piscine)/i;
       const totalXp = xpView
         .filter((xp) => modu.test(xp.path))
@@ -99,7 +106,7 @@ async function fetchUserData(jwt) {
       const xpInKB = ((totalXp + 70000) / 1000).toFixed(0);
 
       console.log("User:", user);
-      console.log("Audits:", audits);
+      // console.log("Audits:", audits);
 
       return { user, xpInKB, proDone, audits };
     } else {

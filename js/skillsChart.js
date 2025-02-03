@@ -80,10 +80,8 @@ function renderChart2(data) {
       labels: labels,
       datasets: [
         {
-          label: "Skills",
+          label: "Skills %",
           data: values,
-          backgroundColor: "rgba(255, 208, 0, 0.5)",
-          borderColor: "rgba(0, 123, 255, 1)",
           borderWidth: 4,
         },
       ],
@@ -94,11 +92,6 @@ function renderChart2(data) {
         title: {
           display: true,
           text: "Top 5 Most Used Skills",
-        },
-      },
-      scales: {
-        y: {
-          beginAtZero: true,
         },
       },
     },

@@ -12,6 +12,8 @@
     <div class="container">
       <!-- First Section -->
       <div class="section" id="headerSection">
+        <h2>Basic Info</h2>
+
         <header>
           <div id="userID">User ID: Loading...</div>
           <div id="username">Username: Loading...</div>
@@ -40,10 +42,17 @@
           <div id="chartSelection">
             <button id="attemptsBtn">Show Attempts Chart</button>
             <button id="skillsBtn">Show Skills Chart</button>
+            <button id="xpsBtn">Show XpsProgress Chart</button>
           </div>
           <canvas id="attemptsChart" width="800" height="600"></canvas>
           <canvas
             id="skillsChart"
+            width="800"
+            height="600"
+            style="display: none"
+          ></canvas>
+          <canvas
+            id="xpChart"
             width="800"
             height="600"
             style="display: none"
@@ -57,5 +66,6 @@
     <script src="js/attemptsChart.js"></script>
     <script src="js/skillsChart.js"></script>
     <script src="js/recAudits.js"></script>
+    <script src="js/xpProChart.js"></script>
   </body>
 </html>

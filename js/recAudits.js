@@ -24,10 +24,12 @@ function updateAudits(audits) {
   auditList.innerHTML = "";
 
   audits.forEach((audit) => {
+    const status = audit.grade >= 1 ? "Passed" : "False";
     const listItem = document.createElement("li");
     listItem.innerHTML = `
         <strong>Date:</strong> ${formatDate(audit.auditedAt)} |
-        <strong>Group:</strong> ${formatGroupMembers(audit.group)}
+        <strong>Group:</strong> ${formatGroupMembers(audit.group)} |
+        <strong>Status:</strong> ${status}
       `;
     auditList.appendChild(listItem);
   });

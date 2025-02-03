@@ -54,7 +54,7 @@ function renderChart(data) {
   const values = Object.values(data);
 
   new Chart(ctx, {
-    type: "polarArea",
+    type: "bar",
     data: {
       labels: labels,
       datasets: [
